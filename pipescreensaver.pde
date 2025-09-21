@@ -11,7 +11,6 @@ void setup(){
 
 void draw(){
   lights();
-  //need trackers to make sure i don't run into edges of the screen
   translate(width/2,height/2,0);
   rotateX(PI/3);
   rotateZ(PI/6);
@@ -29,12 +28,6 @@ void draw(){
         translations[i] = int(random(3));
       }
     }
-    
-    //below prevents pipes from doubling back on themselves
-    //if (i > 0 && translations[i]==translations[i-1] 
-    //&& flips[i]==-1*flips[i-1]){
-    //  flips[i]*=-1;
-    //}
   }
   
   for (int i=0; i<lengths.length-1; i++){
