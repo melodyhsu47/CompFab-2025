@@ -47,28 +47,3 @@ void keyPressed(){
     println("Saved to file");
   }
 }
-
-
-// curveboolean
-
-/*
-- units = mm
-- distance, basepoint = start measurement
-- on easier one: printcolor (see guide)
-- on harder laser cutter:
-  - printwidth hairline engraves; select everything to engrave (0.25-0.3)
-  - properties - check settings on printer doc
-  - make sure it's 40x28 size in properties
-  - click print to send print
-- scale command, select object, select base point
-- type 25 millimeters
-- ctrl p to open up print
-- uncheck everything under visibility
-- set window, do NOT touch corners of box, click center to move box
-- turn on cutter
-- settings -> material (hardwood -> plywood)
-- measure thickness of material, hit apply, OK
-- relocate view (4 arrows button), button to the left is to position laser
-- turn on fan, green button
-- turn off fan after cut is done
-*/ 
