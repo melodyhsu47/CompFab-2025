@@ -49,6 +49,9 @@ class Stippler:
 
         # this table stores the "resistance" of some point
 
+        smallest_x = 0
+        smallest_y = 0
+
         for i in range(iters):
             beam = np.random.choice(values,p=dist)
             beam_xy = [beam % dim_x,dim_y-(beam//dim_y)]
@@ -63,6 +66,15 @@ class Stippler:
                             closest_pt[1]*(closest_pt[2]/(closest_pt[2]+1))
             sampled_points[closest_ind] = closest_pt
 
+            smallest_x = min(closest_pt[0],smallest_x)
+            smallest_y = min(closest_pt[1],smallest_y)
+
+
+        # shift points to all positive if macqueen made them negative
+        for p in sampled_points:
+            p[0] += abs(smallest_x)
+            p[1] += abs(smallest_y)
+
 
         return sampled_points
 
@@ -72,6 +84,10 @@ class Stippler:
         xopt, fopt = solve_tsp_local_search(dm)
 
         return xopt, fopt
+
+
+
+    # partition the search space
 
 
 
